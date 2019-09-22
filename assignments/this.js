@@ -16,15 +16,51 @@
 // Principle 1
 
 // code example for Window Binding
+function car(){
+    console.log(this.sound);
+}
+    
+const sound = "vroom";
+    
+sound();
 
 // Principle 2
 
 // code example for Implicit Binding
 
+let myCar = {
+    name: "Maserati",
+    sound: "vroom",
+    car: function(){
+    console.log(this.sound);
+    }
+};
+    
+myCar.car();
+
 // Principle 3
 
 // code example for New Binding
 
+function Car(saying){
+this.sound = saying;
+}
+    
+let myCar = new Car("I am BumbleBee!");
+    
+console.log(myCar.sound);
+    
 // Principle 4
 
 // code example for Explicit Binding
+
+function car(){
+    console.log(this.sound);
+}
+
+let myCar = {
+    name: "Maserati",
+    sound: "vroom",
+};
+
+car.call(myCar);
